@@ -1,0 +1,531 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* font types */
+  --primary-font: "Cairo", sans-serif;
+  --secondary-font: "Saira Condensed", sans-serif;
+  --ubantu-font: "Ubuntu", sans-serif;
+
+  /* font weight */
+  --fw-bold: 800;
+  --fw-reg: 300;
+
+  /* colors */
+  --gray-black: #303030;
+  --light-green: #16e0bd;
+  --faded-green: #9dfaea;
+  --dark-green: #1c4b43;
+  --white-gray: rgb(238, 234, 234);
+
+  /* font size */
+
+  /* paragrahp heading is half of font large 
+   size and minus of 0.1 rem 
+  */
+  --font-large-size: 3.2rem;
+  --font-med-size: 1.6rem;
+  --font-small-size: 1.2rem;
+
+  /* shadow variable */
+  --shadow-box: 0 3px 10px rgb(0 0 0 / 0.5);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* Global styling */
+h1 {
+  font-family: var(--primary-font);
+  font-size: var(--font-large-size);
+  font-weight: var(--fw-bold);
+  margin: 0;
+  text-align: center;
+  line-height: 1em;
+}
+
+h2 {
+  font-size: var(--font-small-size);
+}
+
+section {
+  padding: 3rem 1.5rem;
+}
+
+img {
+  display: block;
+}
+
+strong {
+  display: block;
+  font-weight: var(--fw-bold);
+  font-family: var(--ubantu-font);
+}
+
+p {
+  text-align: left;
+}
+
+/* X-Small devices (portrait phones, less than 576px) */
+/* navigation styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+  align-items: center;
+  box-shadow: 0 -3px 11px rgb(0 0 0 / 52%);
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  padding: 0%;
+}
+
+/* margin does not apply to last child list*/
+.navbar li:not(:last-child) {
+  margin-right: 5rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-family: var(--primary-font);
+  font-weight: var(--fw-bold);
+}
+
+.navbar a::after {
+  content: " ";
+  display: block;
+  opacity: 0;
+  width: 100%;
+  height: 4px;
+  position: relative;
+  top: 2.0625rem;
+  border-radius: 2em;
+  background-color: var(--light-green);
+  transition: 300ms ease-in-out;
+}
+
+.navbar a:hover::after {
+  opacity: 1;
+}
+
+.navbar img {
+  width: 70px;
+  height: 70px;
+}
+
+/* Intro Section */
+.intro-section__main-title {
+  font-weight: var(--fw-reg);
+  color: var(--gray-black);
+}
+
+.intro-section__sub-title {
+  font-weight: var(--fw-reg);
+  font-family: var(--secondary-font);
+  font-size: var(--font-med-size);
+  letter-spacing: 0.2em;
+  color: var(--dark-green);
+  background-color: var(--light-green);
+  padding: 0.2em;
+  margin: 0.5em auto;
+  border-radius: 0.2em;
+  text-align: center;
+}
+
+.intro-section img {
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: var(--shadow-box);
+}
+
+/* My skill section */
+.my-skill-section {
+  background-color: var(--gray-black);
+  background-image: url(Image/background.png);
+  background-size: cover;
+}
+
+.my-skill-section__main-title {
+  color: var(--light-green);
+  width: max-content;
+  margin: 0 auto;
+}
+
+.my-skill-section__main-title::after {
+  content: "";
+  display: block;
+  width: 20%;
+  height: 2px;
+  margin: 0.1em auto;
+  border-radius: 1em;
+  background-color: white;
+  opacity: 0.4;
+  margin-bottom: 0.5em;
+}
+
+.my-skill-section h2 {
+  font-size: var(--font-small-size);
+}
+
+.my-skill-section__item {
+  text-align: center;
+  color: white;
+  margin-bottom: 3em;
+}
+
+.my-skill-section__items {
+  margin: 0 auto;
+}
+
+/* my skill section__btn styling */
+.my-skill-section__btn {
+  display: block;
+  width: max-content;
+  background-color: var(--light-green);
+  text-decoration: none;
+  padding: 0.5em 1.5em;
+  margin: 0 auto;
+  border-radius: 1.5em;
+  color: var(--dark-green);
+  font-weight: var(--fw-bold);
+  font-size: var(--font-small-size);
+  transition: all ease-in-out 0.2s;
+}
+
+.my-skill-section__btn:hover {
+  transform: scale(1.1);
+  background-color: var(--faded-green);
+}
+
+/* about me section */
+.about-me-section__title {
+  text-align: center;
+}
+
+.about-me-section__sub-title {
+  font-size: var(--font-small-size);
+  font-family: var(--ubantu-font);
+  margin: 1em 0;
+
+  letter-spacing: 0.2em;
+  color: var(--dark-green);
+  background-color: var(--light-green);
+  padding: 0.5em;
+  margin: 0.5em auto;
+  border-radius: 0.2em;
+}
+
+.about-me-section img {
+  grid-area: img;
+  width: 100%;
+  box-shadow: var(--shadow-box);
+}
+
+/* my work section */
+.my-projects {
+  background-color: var(--white-gray);
+  text-align: center;
+}
+
+.my-projects h1 {
+  font-family: var(--ubantu-font);
+}
+
+.my-projects p {
+  text-align: center;
+  font-family: var(--ubantu-font);
+  letter-spacing: 0.1em;
+  font-size: var(--font-small-size);
+  margin: 1em auto;
+  color: var(--dark-green);
+  background-color: var(--light-green);
+  padding: 0.5em;
+  border-radius: 0.2em;
+}
+
+/* project image container */
+.my-projects__container img {
+  width: 100%;
+  transition: all 300ms ease-in-out;
+}
+
+.my-projects__container a {
+  display: block;
+  height: max-content;
+  border-radius: 0.5em;
+}
+
+.my-projects__container a:not(:last-child) {
+  margin-bottom: 2em;
+}
+
+.my-projects__container a {
+  overflow: hidden;
+  box-shadow: var(--shadow-box);
+  background-color: var(--light-green);
+}
+
+.my-projects img:hover {
+  transform: scale(1.5);
+  opacity: 0.6;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 36em) {
+  :root {
+    /* font size */
+    --font-large-size: 3.6rem;
+    --font-med-size: 2rem;
+    --font-small-size: 1.2rem;
+  }
+
+  /* Intro section */
+  .intro-section {
+    display: grid;
+    grid-template-areas:
+      "img title"
+      "img sub-title";
+    margin: 0 auto;
+    row-gap: 0.4em;
+    column-gap: 1.4em;
+    grid-template-columns: min-content max-content;
+    width: min-content;
+    padding-right: 0;
+    padding-left: 2.1em;
+  }
+
+  .intro-section__main-title {
+    height: min-content;
+    align-self: end;
+    text-align: left;
+    font-size: 2.8rem;
+  }
+
+  .intro-section__sub-title {
+    font-size: 1.4rem;
+    padding: 0.2em;
+    grid-column: -1/1;
+    text-align: left;
+    margin: 0;
+    grid-row: 2;
+    align-self: start;
+    position: relative;
+    left: -1.5em;
+    width: calc(100% + 1.5em);
+    padding-left: 57%;
+  }
+
+  .intro-section img {
+    grid-area: img;
+    width: 220px;
+    height: 220px;
+    z-index: 3;
+  }
+
+  /* my skills */
+  .my-skill-section h2 {
+    font-size: var(--font-small-size);
+  }
+
+  /* about me */
+  .about-me-section__sub-title {
+    max-width: 27em;
+  }
+
+  .about-me-section img {
+    margin: 0 auto;
+    max-width: 350px;
+  }
+
+  /* my work section */
+  .my-projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .my-projects__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    column-gap: 2em;
+
+    width: 100%;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 48em) {
+  :root {
+    /* font size */
+    --font-large-size: 4rem;
+    --font-med-size: 2rem;
+    --font-small-size: 1.4rem;
+  }
+
+  /* Intro section */
+  .intro-section {
+    display: grid;
+    grid-template-areas:
+      "img title"
+      "img sub-title";
+    margin: 0 auto;
+    row-gap: 0.4em;
+    column-gap: 1.4em;
+    grid-template-columns: min-content max-content;
+    width: min-content;
+    padding-right: 0;
+    padding-left: 3em;
+  }
+
+  .intro-section__main-title {
+    height: min-content;
+    align-self: end;
+    text-align: left;
+    font-size: var(--font-large-size);
+  }
+
+  .intro-section__sub-title {
+    padding: 0.2em;
+    grid-column: -1/1;
+    text-align: left;
+    margin: 0;
+    grid-row: 2;
+    align-self: start;
+    position: relative;
+    left: -1.5em;
+    width: calc(100% + 1.5em);
+    padding-left: 56%;
+    font-size: var(--font-med-size);
+  }
+
+  .intro-section img {
+    grid-area: img;
+    width: 300px;
+    height: 300px;
+    z-index: 3;
+  }
+
+  /* my skills */
+  .my-skill-section h2 {
+    font-size: var(--font-small-size);
+  }
+
+  /* about me */
+  .about-me-section__sub-title {
+    max-width: 27em;
+  }
+
+  .about-me-section img {
+    margin: 0 auto;
+    max-width: 350px;
+  }
+
+  /* my work section */
+  .my-projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .my-projects__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    column-gap: 2em;
+
+    width: 100%;
+  }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 62em) {
+  :root {
+    /* font size */
+    --font-large-size: 5rem;
+    --font-med-size: 2.5rem;
+    --font-small-size: 1.9rem;
+  }
+
+  /* Intro section */
+  .intro-section {
+    display: grid;
+    grid-template-areas:
+    
+    /* grid-template-areas making
+      image is spreading in two column*/
+      "img title"
+      "img sub-title";
+    margin: 0 auto;
+    row-gap: 0.4em;
+    column-gap: 1.4em;
+    grid-template-columns: min-content max-content;
+    width: min-content;
+    padding-right: 0;
+    padding-left: 3em;
+  }
+
+  .intro-section__main-title {
+    height: min-content;
+    align-self: end;
+    text-align: left;
+    font-size: var(--font-large-size);
+  }
+
+  .intro-section__sub-title {
+    padding: 0.2em;
+    grid-column: -1/1;
+    text-align: left;
+    margin: 0;
+    grid-row: 2;
+    align-self: start;
+    position: relative;
+    left: -1.5em;
+    width: calc(100% + 1.5em);
+    padding-left: 56%;
+    font-size: var(--font-med-size);
+  }
+
+  .intro-section img {
+    grid-area: img;
+    width: 300px;
+    height: 300px;
+    z-index: 3;
+  }
+
+  /* my skills */
+  .my-skill-section h2 {
+    font-size: var(--font-small-size);
+  }
+
+  /* about me */
+  .about-me-section__sub-title {
+    max-width: 27em;
+  }
+
+  .about-me-section img {
+    margin: 0 auto;
+    max-width: 350px;
+  }
+
+  /* my work section */
+  .my-projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .my-projects__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    column-gap: 2em;
+
+    width: 100%;
+  }
+}
