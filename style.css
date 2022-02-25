@@ -51,6 +51,7 @@ h1 {
 
 h2 {
   font-size: var(--font-small-size);
+  margin-bottom: 0;
 }
 
 section {
@@ -156,7 +157,7 @@ p {
 .my-skill-section__main-title {
   color: var(--light-green);
   width: max-content;
-  margin: 0 auto;
+  margin: 0rem auto;
 }
 
 .my-skill-section__main-title::after {
@@ -164,11 +165,13 @@ p {
   display: block;
   width: 20%;
   height: 2px;
-  margin: 0.1em auto;
+  margin-top: 0.1em;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 1em;
   background-color: white;
   opacity: 0.4;
-  margin-bottom: 0.5em;
 }
 
 .my-skill-section h2 {
@@ -183,6 +186,7 @@ p {
 
 .my-skill-section__items {
   margin: 0 auto;
+  padding-top: 0.5rem;
 }
 
 /* my skill section__btn styling */
@@ -356,7 +360,7 @@ p {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     column-gap: 2em;
-
+    background-color: #16e0bd;
     width: 100%;
   }
 }
@@ -439,7 +443,6 @@ p {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     column-gap: 2em;
-
     width: 100%;
   }
 }
@@ -450,7 +453,7 @@ p {
     /* font size */
     --font-large-size: 5rem;
     --font-med-size: 2.5rem;
-    --font-small-size: 1.9rem;
+    --font-small-size: 1.6rem;
   }
 
   /* Intro section */
@@ -486,9 +489,11 @@ p {
     grid-row: 2;
     align-self: start;
     position: relative;
-    left: -1.5em;
-    width: calc(100% + 1.5em);
-    padding-left: 56%;
+    left: -1.2em;
+    width: calc(100% + 1.2em);
+
+    /* aligning the "front end dev" with above text */
+    padding-left: 49.2%;
     font-size: var(--font-med-size);
   }
 
@@ -500,6 +505,15 @@ p {
   }
 
   /* my skills */
+  .my-skill-section__items {
+    display: flex;
+    padding-top: 0.5rem;
+    padding-bottom: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 1.5rem;
+  }
+
   .my-skill-section h2 {
     font-size: var(--font-small-size);
   }
@@ -525,7 +539,6 @@ p {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     column-gap: 2em;
-
     width: 100%;
   }
 }
